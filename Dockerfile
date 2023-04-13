@@ -6,5 +6,5 @@ RUN mvn install
 FROM openjdk:11.0
 WORKDIR /app
 COPY --from=build /app/target/Uber.jar /app/
-EXPOSE 80
+EXPOSE 8081
 ENTRYPOINT [ "java","-jar","Uber.jar" ]
