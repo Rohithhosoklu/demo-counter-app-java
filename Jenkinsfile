@@ -88,7 +88,7 @@ pipeline{
                                     ], 
                                     credentialsId: 'netus-auth', 
                                             groupId: 'com.example', 
-                                            nexusUrl: '192.168.1.249:8081',  
+                                            nexusUrl: '192.168.0.114:8081',  
                                             nexusVersion: 'nexus3', 
                                             protocol: 'http', 
                                             repository: nexusRepo, 
@@ -103,7 +103,7 @@ pipeline{
                     script
                     {
                         sh 'docker image build -t $JOB_NAME:$BUILD_ID .'
-                        sh 'docker run -d -p 80:8081 --name javaapp $JOB_NAME:$BUILD_ID'
+                        sh 'docker run -d -p 80:9010 --name javaapp $JOB_NAME:$BUILD_ID'
                     }
                 }
             }
