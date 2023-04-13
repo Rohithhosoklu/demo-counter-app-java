@@ -4,7 +4,7 @@ pipeline{
 
      tools {
         // Install Maven 3.9.1
-        maven 'Maven 3.9.1'
+        maven 'apache-maven-3.9.1'
     }
     
     stages {
