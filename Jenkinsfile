@@ -88,7 +88,7 @@ pipeline{
                                     ], 
                                     credentialsId: 'netus-auth', 
                                             groupId: 'com.example', 
-                                            nexusUrl: '192.168.1.249:8081',  
+                                            nexusUrl: '192.168.0.121:8081',  
                                             nexusVersion: 'nexus3', 
                                             protocol: 'http', 
                                             repository: nexusRepo, 
