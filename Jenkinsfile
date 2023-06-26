@@ -55,7 +55,7 @@ pipeline{
                 
                 script{
                     
-                    withSonarQubeEnv(credentialsId: 'SonarQube_Token') {
+                    withSonarQubeEnv(credentialsId: 'soanr-token') {
                         sh 'mvn clean package sonar:sonar'
                     }
                    }
@@ -68,7 +68,7 @@ pipeline{
                     
                     script{
                         
-                        waitForQualityGate abortPipeline: false, credentialsId: 'SonarQube_Token' 
+                        waitForQualityGate abortPipeline: false, credentialsId: 'soanr-token' 
                     }
                 }
             }
@@ -88,7 +88,7 @@ pipeline{
                                     ], 
                                     credentialsId: 'netus-auth', 
                                             groupId: 'com.example', 
-                                            nexusUrl: '192.168.0.121:8081',  
+                                            nexusUrl: '34.201.109.191:8081',  
                                             nexusVersion: 'nexus3', 
                                             protocol: 'http', 
                                             repository: nexusRepo, 
